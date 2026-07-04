@@ -98,9 +98,9 @@ export default function ServicesSection() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         {/* Heading */}
         <div className="mb-15 flex justify-center text-center">
-          <h2 className="max-w-[900px] font-orbitron text-[32px]  md:text-3xl leading-[1.3] text-white  tracking-wide">
+          <h2 className="max-w-[900px] font-orbitron text-2xl  md:text-3xl leading-[1.3] text-white  tracking-wide">
             We know your car deserves
-            <br />
+            <br className="hidden md:block" />
             the best, so we've got you covered!
           </h2>
         </div>
