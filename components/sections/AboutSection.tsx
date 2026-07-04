@@ -2,21 +2,21 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="bg-black py-28">
-      <div className="mx-auto max-w-[1600px] pl-32">
-        <div className="grid grid-cols-12 items-center">
+    <section id="about" className="bg-black py-16 lg:py-28 overflow-hidden">
+      <div className="mx-auto max-w-[1600px] px-6 lg:pl-32 lg:px-0">
+        <div className="grid grid-cols-12 items-center gap-y-12 lg:gap-y-0">
           {/* Left Content */}
           <div className="col-span-12 lg:col-span-6">
-            <h2 className="font-orbitron text-5xl  leading-none text-red">
+            <h2 className="font-orbitron text-3xl lg:text-5xl leading-none text-red">
               Love your ride?
             </h2>
 
-            <h3 className="mt-2 font-orbitron text-3xl font-light leading-none text-white">
+            <h3 className="mt-2 font-orbitron text-xl lg:text-3xl font-light leading-none text-white">
               You'll love us too.
             </h3>
 
-            <div className="mt-8 max-w-[720px] space-y-6">
-              <p className="text-lg leading-[1.4] font-light text-white">
+            <div className="mt-6 lg:mt-8 max-w-[720px] space-y-4 lg:space-y-6">
+              <p className="text-base lg:text-lg leading-[1.4] font-light text-white">
                 Not sure where to start your car’s upgrade journey? Spoiler:
                 With us. Every time you upgrade your car with us, it’s more than
                 just finding the best car accessories; it’s about creating a new
@@ -28,7 +28,7 @@ export default function AboutSection() {
                 boost your drive, we have it all.
               </p>
 
-              <p className="text-lg leading-[1.4] font-light text-white">
+              <p className="text-base lg:text-lg leading-[1.4] font-light text-white">
                 By bringing the finest brands just a drive away in Bangalore,
                 our expert team ensures you customise your car exactly the way
                 you envision it. Since our establishment in 1992, we have never
@@ -41,14 +41,14 @@ export default function AboutSection() {
           </div>
 
           {/* Right Image */}
-          <div className="relative col-span-12 flex justify-end lg:col-span-6">
-            <div className="relative h-[560px] w-[900px]">
+          <div className="relative col-span-12 flex lg:justify-end lg:col-span-6">
+            <div className="relative h-[300px] w-full sm:h-[400px] lg:h-[560px] lg:w-[900px]">
               <Image
                 src="/love-ride.png"
                 alt="Car Interior"
                 fill
                 priority
-                className="object-cover object-right"
+                className="object-cover object-center lg:object-right rounded-xl lg:rounded-none"
               />
             </div>
           </div>
