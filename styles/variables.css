@@ -1,0 +1,23 @@
+:root {
+  /* Brand */
+  --color-red: #db0204;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #1a1a1a;
+
+  /* Text */
+  --text-primary: var(--color-black);
+  --text-thirtery: var(--color-red);
+  --text-secondary: #6b7280;
+
+  /* Background */
+  --background: var(--color-white);
+
+  /* Border */
+  --border: #e5e5e5;
+
+  /* Fonts */
+  --font-body: var(--font-pt-sans);
+  --font-heading: var(--font-orbitron);
+}
