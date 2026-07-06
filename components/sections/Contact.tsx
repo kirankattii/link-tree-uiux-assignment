@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { slideInFromLeft } from "@/lib/animation";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,18 +37,28 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-[1600px] flex flex-col lg:flex-row items-center justify-between">
         {/* Left Side: Car Image */}
-        <div className="relative w-full lg:w-1/2 h-[350px] sm:h-[450px] lg:h-[800px] overflow-hidden bg-black flex items-center justify-start">
-          <Image
-            src="/car2.png"
-            alt="Tesla Model S Custom Build"
-            fill
-            priority
-            className="object-cover object-left"
-          />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="relative w-full lg:w-1/2 h-[350px] sm:h-[450px] lg:h-[800px] overflow-hidden bg-black flex items-center justify-start"
+        >
+          <motion.div
+            variants={slideInFromLeft}
+            className="w-full h-full relative"
+          >
+            <Image
+              src="/car2.png"
+              alt="Tesla Model S Custom Build"
+              fill
+              priority
+              className="object-cover object-left"
+            />
+          </motion.div>
           {/* Gradients to blend the top and right edges of the image into the black background */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-black pointer-events-none" />
           <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black via-black/50 to-transparent pointer-events-none" />
-        </div>
+        </motion.div>
 
         {/* Right Side: Contact Form */}
         <div className="w-full lg:w-1/2 px-6 py-16 md:py-24 lg:pl-16 lg:pr-24 flex flex-col justify-center">

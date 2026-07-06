@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { blogs } from "@/constants/data";
+import { staggerContainer, fadeInUp } from "@/lib/animation";
 
 export default function Blog() {
   return (
@@ -15,9 +17,19 @@ export default function Blog() {
         </div>
 
         {/* Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-[1300px] mx-auto w-full">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-[1300px] mx-auto w-full"
+        >
           {blogs.map((blog) => (
-            <div key={blog.id} className="flex flex-col group">
+            <motion.div
+              key={blog.id}
+              variants={fadeInUp}
+              className="flex flex-col group"
+            >
               {/* Image Container */}
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-[#121212]">
                 <Image
@@ -39,10 +51,11 @@ export default function Blog() {
                   Read More
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+

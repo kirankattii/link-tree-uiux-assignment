@@ -22,7 +22,7 @@ export default function BrandMarquee() {
                 alt={brand.name}
                 width={brand.width}
                 height={brand.height}
-                className="h-8 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300"
+                className="h-8 w-auto object-contain brightness-0 invert opacity-100 transition-all duration-300"
               />
             </div>
           ))}
@@ -43,7 +43,7 @@ export default function BrandMarquee() {
                 alt={brand.name}
                 width={brand.width}
                 height={brand.height}
-                className="h-8 w-auto object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300"
+                className="h-8 w-auto object-contain brightness-0 invert opacity-100 transition-all duration-300"
               />
             </div>
           ))}

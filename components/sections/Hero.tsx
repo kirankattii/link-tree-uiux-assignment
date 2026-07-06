@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { carAnimation } from "@/lib/animation";
 
 export default function Hero() {
   return (
@@ -32,15 +36,22 @@ export default function Hero() {
       </div>
 
       {/* Car */}
-      <div className="pointer-events-none absolute bottom-5 md:bottom-0 md:bottom-[-40px] left-1/2 z-20 w-[400px] sm:w-[700px] md:w-[900px] -translate-x-1/2">
-        <Image
-          src="/black-car.png"
-          alt="Car"
-          width={900}
-          height={500}
-          priority
-          className="h-auto w-full"
-        />
+      <div className="pointer-events-none absolute bottom-5 md:bottom-0 md:bottom-[-30px] left-1/2 z-20 w-[400px] sm:w-[700px] md:w-[900px] -translate-x-1/2">
+        <motion.div
+          variants={carAnimation}
+          initial="hidden"
+          animate="visible"
+          className="w-full"
+        >
+          <Image
+            src="/black-car.png"
+            alt="Car"
+            width={900}
+            height={500}
+            priority
+            className="h-auto w-full"
+          />
+        </motion.div>
       </div>
 
       {/* Bottom Fade */}

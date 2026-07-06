@@ -79,12 +79,18 @@ export default function Testimonials() {
               <div
                 key={testimonial.id}
                 style={style}
-                className="absolute w-[90%] md:w-[680px] bg-[#181818] rounded-2xl p-8 md:p-10 transition-all duration-500 ease-in-out border border-white/5 flex flex-col justify-between"
+                className="absolute w-[90%] md:w-[640px] bg-[#181818] rounded-2xl p-6 md:p-8 transition-all duration-500 ease-in-out border border-white/5 flex flex-col justify-between"
               >
                 {/* Quote Symbol (Only visible or prominent on active card) */}
                 {isActive && (
-                  <div className="absolute -top-8 -left-4 text-[90px] md:text-[110px] text-white font-orbitron leading-none select-none z-10">
-                    “
+                  <div className="absolute -top-3 -left-3 md:-top-6 md:-left-6 w-8 h-8 md:w-12 md:h-12 select-none z-10">
+                    <Image
+                      src="/colon.png"
+                      alt="Quote"
+                      width={89}
+                      height={80}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 )}
 

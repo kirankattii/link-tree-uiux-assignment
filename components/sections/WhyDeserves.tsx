@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { zoomIn } from "@/lib/animation";
 
 export default function WhyDeserves() {
   return (
@@ -31,7 +33,13 @@ export default function WhyDeserves() {
         </p>
 
         {/* Wheels Image */}
-        <div className="relative w-full max-w-[1200px] aspect-[2.6/1] mt-8  select-none pointer-events-none">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={zoomIn}
+          className="relative w-full max-w-[1200px] aspect-[2.6/1] mt-8  select-none pointer-events-none"
+        >
           <Image
             src="/wheel.png"
             alt="Wheels Showcase"
@@ -39,7 +47,7 @@ export default function WhyDeserves() {
             priority
             className="object-contain"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
